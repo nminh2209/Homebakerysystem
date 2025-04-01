@@ -150,7 +150,7 @@ def view_order(request):
     #forms = findDate()
     if request.method == 'POST':
         orderdate=request.POST['orderdate']
-        o=Order.objects.filter(order_date=orderdate)
+        o=Order.objects.filter(order_date=orderdate).first()
         context = {
             'o':o
         }
